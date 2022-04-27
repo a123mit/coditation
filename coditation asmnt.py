@@ -2,7 +2,7 @@ from rich.prompt import Prompt
 from rich.console import Console
 from random import choice
 
-SQUARES = {
+Sy = {
     'cp': '✅',
     'cl': '⭕',
     'il': '❌'
@@ -35,13 +35,13 @@ def check_guess(guess, answer):
     for i, ltr in enumerate(guess):
         if answer[i] == guess[i]:
             guessed += cp(ltr)
-            wordle_pattern.append(SQUARES['cp'])
+            wordle_pattern.append(Sy['cp'])
         elif ltr in answer:
             guessed += cl(ltr)
-            wordle_pattern.append(SQUARES['cl'])
+            wordle_pattern.append(Sy['cl'])
         else:
             guessed += il(ltr)
-            wordle_pattern.append(SQUARES['il'])
+            wordle_pattern.append(Sy['il'])
     return ''.join(guessed), ''.join(wordle_pattern)
 
 
